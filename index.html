@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AdiosShoes</title>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Sans:wght@300;400;500&family=Bebas+Neue&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --black: #1a1a18;
+      --yellow: #f0d72b;
+      --white: #ffffff;
+      --gray: #f5f5f0;
+      --text-muted: #888;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      color: var(--black);
+      background: var(--white);
+      overflow-x: hidden;
+    }
+
+    /* NAV */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 48px;
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: var(--white);
+      border-bottom: 1px solid #eee;
+    }
+
+    .logo {
+      font-family: 'Anton', sans-serif;
+      font-size: 22px;
+      letter-spacing: 1px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--black);
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    .nav-links a:hover { color: var(--text-muted); }
+
+    /* HERO */
+    .hero {
+      margin-top: 63px;
+      height: 90vh;
+      min-height: 600px;
+      background: url('https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=1400&q=80') center/cover no-repeat;
+      position: relative;
+      display: flex;
+      align-items: flex-end;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, rgba(255,255,255,0.15) 0%, rgba(0,0,0,0.4) 100%);
+    }
+
+    .hero-content {
+      position: relative;
+      padding: 60px 48px;
+      color: var(--white);
+    }
+
+    .hero-title {
+      font-family: 'Anton', sans-serif;
+      font-size: clamp(64px, 10vw, 140px);
+      line-height: 0.9;
+      letter-spacing: -2px;
+      text-shadow: 2px 2px 0px rgba(0,0,0,0.3);
+    }
+
+    .hero-sub {
+      font-size: 16px;
+      font-weight: 300;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      margin-top: 12px;
+      opacity: 0.9;
+    }
+
+    .badge {
+      position: absolute;
+      top: 48px;
+      left: 48px;
+      background: var(--yellow);
+      color: var(--black);
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      line-height: 1.3;
+      letter-spacing: 0.5px;
+      transform: rotate(-12deg);
+      box-shadow: 3px 3px 0 rgba(0,0,0,0.2);
+    }
+
+    .badge span {
+      font-size: 18px;
+      font-weight: 900;
+      display: block;
+    }
+
+    .shop-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 24px;
+      background: var(--yellow);
+      color: var(--black);
+      padding: 12px 28px;
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .shop-btn:hover { background: #ffe000; }
+
+    /* WHO WE ARE */
+    .who {
+      text-align: center;
+      padding: 100px 48px 80px;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 24px;
+    }
+
+    .who h2 {
+      font-family: 'DM Sans', sans-serif;
+      font-size: clamp(24px, 3vw, 36px);
+      font-weight: 400;
+      line-height: 1.4;
+      margin-bottom: 28px;
+    }
+
+    .who h2 sup { font-size: 0.5em; vertical-align: super; }
+
+    .btn-yellow {
+      display: inline-block;
+      background: var(--yellow);
+      color: var(--black);
+      padding: 10px 24px;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+    }
+    .btn-yellow:hover { background: #ffe000; }
+
+    /* GALLERY STRIP */
+    .gallery-strip {
+      display: flex;
+      gap: 8px;
+      padding: 0 48px 80px;
+      overflow-x: auto;
+    }
+
+    .gallery-strip::-webkit-scrollbar { display: none; }
+
+    .gallery-strip img {
+      width: 220px;
+      height: 160px;
+      object-fit: cover;
+      flex-shrink: 0;
+      filter: grayscale(20%);
+      transition: filter 0.3s;
+    }
+    .gallery-strip img:hover { filter: grayscale(0%); }
+
+    /* WHAT WE DO */
+    .what {
+      background: var(--gray);
+      padding: 100px 48px;
+      text-align: center;
+    }
+
+    .what h2 {
+      font-family: 'Anton', sans-serif;
+      font-size: clamp(32px, 5vw, 56px);
+      letter-spacing: 2px;
+      margin-bottom: 12px;
+    }
+
+    .what .sub {
+      font-size: 14px;
+      color: var(--text-muted);
+      margin-bottom: 80px;
+    }
+
+    .features {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .feature-item {
+      display: grid;
+      grid-template-columns: 60px 80px 1fr;
+      align-items: center;
+      gap: 32px;
+      padding: 40px 0;
+      border-bottom: 1px solid #ddd;
+      text-align: left;
+    }
+
+    .feature-item:first-child { border-top: 1px solid #ddd; }
+
+    .feature-num {
+      font-family: 'Anton', sans-serif;
+      font-size: 48px;
+      color: #ddd;
+      line-height: 1;
+    }
+
+    .feature-img {
+      width: 72px;
+      height: 72px;
+      object-fit: cover;
+      border-radius: 4px;
+    }
+
+    .feature-text h3 {
+      font-family: 'Anton', sans-serif;
+      font-size: 24px;
+      letter-spacing: 1.5px;
+      margin-bottom: 8px;
+    }
+
+    .feature-text p {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* PRODUCT SPOTLIGHT */
+    .spotlight {
+      padding: 120px 48px;
+      display: flex;
+      justify-content: center;
+      background: var(--white);
+    }
+
+    .spotlight img {
+      max-width: 500px;
+      width: 100%;
+      object-fit: contain;
+      filter: drop-shadow(0 30px 60px rgba(0,0,0,0.12));
+      transition: transform 0.4s;
+    }
+
+    .spotlight img:hover { transform: translateY(-10px) rotate(-2deg); }
+
+    /* DISCOVER */
+    .discover {
+      text-align: center;
+      padding: 80px 48px 120px;
+    }
+
+    .discover .section-label { margin-bottom: 20px; }
+
+    .discover h2 {
+      font-family: 'DM Sans', sans-serif;
+      font-size: clamp(28px, 4vw, 48px);
+      font-weight: 400;
+      margin-bottom: 32px;
+      line-height: 1.2;
+    }
+
+    /* FOOTER */
+    footer {
+      background: var(--black);
+      color: var(--white);
+      padding: 80px 48px 40px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .footer-bg-text {
+      font-family: 'Anton', sans-serif;
+      font-size: clamp(80px, 18vw, 220px);
+      color: rgba(255,255,255,0.06);
+      position: absolute;
+      bottom: -20px;
+      left: 0;
+      right: 0;
+      text-align: center;
+      letter-spacing: 10px;
+      line-height: 1;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    .footer-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 60px;
+    }
+
+    .footer-brand .logo {
+      font-family: 'Anton', sans-serif;
+      font-size: 28px;
+      margin-bottom: 8px;
+    }
+
+    .footer-brand .tagline {
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+    }
+
+    .footer-nav {
+      display: flex;
+      gap: 40px;
+      list-style: none;
+    }
+
+    .footer-nav a {
+      color: rgba(255,255,255,0.6);
+      text-decoration: none;
+      font-size: 13px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .footer-nav a:hover { color: var(--yellow); }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 32px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      position: relative;
+      font-size: 12px;
+      color: rgba(255,255,255,0.4);
+    }
+
+    /* ANIMATIONS */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .hero-content { animation: fadeUp 0.8s ease both; }
+    .who { animation: fadeUp 0.6s ease 0.2s both; }
+
+    @media (max-width: 768px) {
+      nav { padding: 16px 24px; }
+      .hero-content { padding: 40px 24px; }
+      .who, .what, .discover, .spotlight { padding-left: 24px; padding-right: 24px; }
+      .gallery-strip { padding: 0 24px 60px; }
+      .feature-item { grid-template-columns: 40px 64px 1fr; gap: 16px; }
+      .footer-top { flex-direction: column; gap: 32px; }
+      footer { padding: 60px 24px 32px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="logo">AdiosShoes</div>
+    <ul class="nav-links">
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="badge">
+      <span>10%</span>
+      NEW<br>Off Your<br>First Order<br>SPECIAL
+    </div>
+    <div class="hero-content">
+      <p class="hero-sub">Elevate Your Journey.</p>
+      <h1 class="hero-title">AdiosShoes<sup style="font-size:0.3em;vertical-align:super;">®</sup></h1>
+      <a href="#" class="shop-btn">Shop Now →</a>
+    </div>
+  </section>
+
+  <!-- WHO WE ARE -->
+  <section class="who" id="about">
+    <p class="section-label">Who We Are</p>
+    <h2>We're AdiosShoes<sup>®</sup> and we're here to help you find out your shoes.</h2>
+    <a href="#" class="btn-yellow">About Us →</a>
+  </section>
+
+  <!-- GALLERY STRIP -->
+  <div class="gallery-strip" id="gallery">
+    <img src="https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?w=400&q=80" alt="Shoe 1"/>
+    <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400&q=80" alt="Shoe 2"/>
+    <img src="https://images.unsplash.com/photo-1608231387042-66d1773070a5?w=400&q=80" alt="Shoe 3"/>
+    <img src="https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=400&q=80" alt="Shoe 4"/>
+    <img src="https://images.unsplash.com/photo-1605348532760-6753d2c43329?w=400&q=80" alt="Shoe 5"/>
+  </div>
+
+  <!-- WHAT WE DO -->
+  <section class="what">
+    <p class="section-label">What We Offer</p>
+    <h2>WHAT WE DO</h2>
+    <p class="sub">We take care of your feet from A to Z</p>
+    <div class="features">
+      <div class="feature-item">
+        <span class="feature-num">1</span>
+        <img class="feature-img" src="https://images.unsplash.com/photo-1571945192075-b18bd9f3a66e?w=200&q=80" alt="Accurately"/>
+        <div class="feature-text">
+          <h3>ACCURATELY</h3>
+          <p>Accurately measure the size of your feet</p>
+        </div>
+      </div>
+      <div class="feature-item">
+        <span class="feature-num">2</span>
+        <img class="feature-img" src="https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=200&q=80" alt="Material"/>
+        <div class="feature-text">
+          <h3>THE MATERIAL</h3>
+          <p>Is incredibly soft</p>
+        </div>
+      </div>
+      <div class="feature-item">
+        <span class="feature-num">3</span>
+        <img class="feature-img" src="https://images.unsplash.com/photo-1539185441755-769473a23570?w=200&q=80" alt="Mobility"/>
+        <div class="feature-text">
+          <h3>HIGH MOBILITY</h3>
+          <p>It helps you move more easily, especially when running, because it will allow you to run for a long time without any foot problems.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SPOTLIGHT -->
+  <section class="spotlight">
+    <img src="https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=800&q=80" alt="AdiosShoes Product"/>
+  </section>
+
+  <!-- DISCOVER -->
+  <section class="discover">
+    <p class="section-label">Work With Us</p>
+    <h2>Discover how we can make shoes.</h2>
+    <a href="#" class="btn-yellow">About Us →</a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer id="contact">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="logo">AdiosShoes<sup style="font-size:0.5em">®</sup></div>
+        <div class="tagline">Elevate Your Journey</div>
+      </div>
+      <ul class="footer-nav">
+        <li><a href="#">AdiosShoes</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-bottom">
+      <span>Chanh Hung, Q8</span>
+      <span>© 2024 AdiosShoes®</span>
+    </div>
+    <div class="footer-bg-text">AS.</div>
+  </footer>
+
+</body>
+</html>
