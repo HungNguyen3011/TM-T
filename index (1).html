@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- =========================================================
+    META TAGS – AEO: title & description tối ưu cho featured snippet
+  ========================================================= -->
+  <title>Cà Phê Sài Gòn – Quán Cà Phê Ngon Quận 1 TP.HCM</title>
+  <meta name="description" content="Cà Phê Sài Gòn phục vụ cà phê phin truyền thống và đặc sản Việt từ 7h–22h. Địa chỉ: 123 Nguyễn Huệ, Quận 1, TP.HCM. Giá từ 25.000đ." />
+  <meta name="author" content="Nguyễn Minh Tuấn – chủ quán Cà Phê Sài Gòn" />
+  <link rel="canonical" href="https://caphe-saigon.onrender.com/" />
+
+  <!-- =========================================================
+    SCHEMA 1: Organization + LocalBusiness
+    AIEO: Khai báo entity rõ ràng để AI nhận diện thương hiệu
+  ========================================================= -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CafeOrCoffeeShop",
+    "name": "Cà Phê Sài Gòn",
+    "url": "https://caphe-saigon.onrender.com",
+    "description": "Quán cà phê phin truyền thống tại Quận 1 TP.HCM, phục vụ từ 7h–22h mỗi ngày.",
+    "telephone": "+84-28-1234-5678",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "123 Nguyễn Huệ",
+      "addressLocality": "Quận 1",
+      "addressRegion": "TP. Hồ Chí Minh",
+      "addressCountry": "VN"
+    },
+    "openingHours": "Mo-Su 07:00-22:00",
+    "priceRange": "25.000đ – 65.000đ",
+    "servesCuisine": "Cà phê Việt Nam",
+    "founder": {
+      "@type": "Person",
+      "name": "Nguyễn Minh Tuấn"
+    }
+  }
+  </script>
+
+  <!-- =========================================================
+    SCHEMA 2: FAQPage
+    AEO: Đánh dấu Q&A để xuất hiện trong featured snippet
+        và được đọc bởi voice search (Siri, Google Assistant)
+  ========================================================= -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Cà Phê Sài Gòn mở cửa mấy giờ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Cà Phê Sài Gòn mở cửa từ 7 giờ sáng đến 22 giờ tối, tất cả các ngày trong tuần kể cả cuối tuần và ngày lễ."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Cà phê phin truyền thống là gì?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Cà phê phin truyền thống là phương pháp pha cà phê bằng phin nhôm hoặc inox, cho nước nóng nhỏ giọt qua bột cà phê trong 4–5 phút. Kết quả là ly cà phê đậm đà, thơm nồng đặc trưng của Việt Nam."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Cà Phê Sài Gòn ở đâu?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Cà Phê Sài Gòn tọa lạc tại 123 Nguyễn Huệ, Quận 1, TP. Hồ Chí Minh. Gần phố đi bộ Nguyễn Huệ, dễ tìm và có chỗ để xe."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- =========================================================
+    SCHEMA 3: HowTo
+    AEO: Tối ưu cho kết quả dạng hướng dẫn từng bước (how-to rich result)
+  ========================================================= -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "Cách pha cà phê phin tại nhà",
+    "description": "Hướng dẫn pha cà phê phin Việt Nam đậm đà tại nhà trong 10 phút.",
+    "totalTime": "PT10M",
+    "step": [
+      { "@type": "HowToStep", "position": 1, "name": "Chuẩn bị", "text": "Cho 20–25g cà phê xay vừa vào phin, lắc nhẹ." },
+      { "@type": "HowToStep", "position": 2, "name": "Làm ướt", "text": "Rót 30ml nước 90–95°C, chờ 30 giây để cà phê nở." },
+      { "@type": "HowToStep", "position": 3, "name": "Pha chính", "text": "Rót tiếp 150ml nước, đậy nắp, chờ 4–5 phút." },
+      { "@type": "HowToStep", "position": 4, "name": "Thưởng thức", "text": "Uống nóng hoặc thêm đá và sữa đặc tùy khẩu vị." }
+    ]
+  }
+  </script>
+
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: Arial, sans-serif; font-size: 16px; line-height: 1.7; color: #1a1a1a; background: #faf8f5; }
+    a { color: #8b4513; }
+
+    header { background: #2c1810; color: #fff; padding: 18px 5%; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; }
+    header h1 { font-size: 20px; }
+    header nav a { color: #d4a96a; margin-left: 20px; text-decoration: none; font-size: 14px; }
+
+    .hero { background: #2c1810; color: #faf8f5; padding: 56px 5%; text-align: center; }
+    .hero h2 { font-size: 34px; margin-bottom: 12px; line-height: 1.25; }
+    .hero p { color: #d4a96a; margin-bottom: 20px; }
+    .chips { display: flex; justify-content: center; flex-wrap: wrap; gap: 8px; }
+    .chip { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: #fff; padding: 4px 14px; border-radius: 100px; font-size: 13px; }
+
+    .container { max-width: 860px; margin: 0 auto; padding: 0 5%; }
+
+    section { padding: 44px 0; border-bottom: 1px solid #e8e0d5; }
+    section:last-of-type { border-bottom: none; }
+
+    h2.stitle { font-size: 24px; margin-bottom: 6px; color: #2c1810; }
+    h2.stitle small { display: block; font-family: Arial, sans-serif; font-size: 11px; font-weight: normal; letter-spacing: 2px; text-transform: uppercase; color: #8b4513; margin-bottom: 4px; }
+
+    .menu-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 14px; margin-top: 18px; }
+    .menu-item { background: #fff; border: 1px solid #e8e0d5; border-radius: 8px; padding: 16px; }
+    .menu-item h3 { font-size: 15px; margin-bottom: 3px; }
+    .menu-item .price { color: #8b4513; font-weight: bold; }
+    .menu-item p { font-size: 13px; color: #666; margin-top: 5px; }
+
+    /* AEO: FAQ section – câu trả lời ngắn gọn, đặt trực tiếp, match FAQPage schema */
+    .faq-list { display: grid; gap: 10px; margin-top: 18px; }
+    .faq-card { background: #fff; border: 1px solid #e8e0d5; border-radius: 8px; overflow: hidden; }
+    .faq-card h3 { background: #f5ede2; padding: 12px 16px; font-size: 15px; color: #2c1810; }
+    .faq-card .answer { padding: 12px 16px; font-size: 14.5px; color: #333; }
+
+    /* AEO: HowTo section – numbered steps match HowTo schema */
+    .steps { display: grid; gap: 10px; margin-top: 18px; }
+    .step { display: flex; gap: 14px; background: #fff; border: 1px solid #e8e0d5; border-radius: 8px; padding: 14px 16px; }
+    .step-num { width: 30px; height: 30px; background: #2c1810; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: bold; flex-shrink: 0; }
+    .step h3 { font-size: 15px; margin-bottom: 3px; }
+    .step p { font-size: 14px; color: #555; }
+
+    /* AIEO: E-E-A-T author box – thể hiện Expertise + Trustworthiness */
+    .author-box { background: #fff; border: 1px solid #e8e0d5; border-radius: 8px; padding: 20px; display: flex; gap: 16px; align-items: flex-start; margin-top: 18px; }
+    .author-avatar { width: 50px; height: 50px; background: #2c1810; color: #d4a96a; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0; }
+    .author-info h3 { font-size: 15px; margin-bottom: 3px; }
+    .author-info p { font-size: 14px; color: #555; }
+    .author-info .meta { margin-top: 6px; font-size: 12px; color: #888; font-family: Arial, sans-serif; }
+
+    footer { background: #2c1810; color: rgba(255,255,255,0.6); text-align: center; padding: 26px 5%; font-size: 13px; }
+    footer p { margin: 3px 0; }
+    footer strong { color: #d4a96a; }
+
+    @media (max-width: 600px) {
+      .hero h2 { font-size: 26px; }
+      header nav { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- SEMANTIC HTML5 – AIEO: tag đúng ngữ nghĩa giúp AI hiểu cấu trúc -->
+
+<header>
+  <h1>☕ Cà Phê Sài Gòn</h1>
+  <nav aria-label="Menu chính">
+    <a href="#menu">Thực đơn</a>
+    <a href="#huong-dan">Pha cà phê</a>
+    <a href="#faq">Hỏi đáp</a>
+    <a href="#gioi-thieu">Về chúng tôi</a>
+  </nav>
+</header>
+
+<div class="hero">
+  <div style="max-width:580px;margin:0 auto">
+    <h2>Cà phê phin truyền thống<br>giữa lòng Sài Gòn</h2>
+    <p>Hạt Robusta Buôn Ma Thuột rang mộc, không hương liệu</p>
+    <div class="chips">
+      <span class="chip">📍 123 Nguyễn Huệ, Q.1</span>
+      <span class="chip">🕐 7:00 – 22:00 mỗi ngày</span>
+      <span class="chip">💰 Từ 25.000đ</span>
+    </div>
+  </div>
+</div>
+
+<main>
+  <div class="container">
+
+    <!-- THỰC ĐƠN – itemscope MenuItem: AIEO entity markup -->
+    <section id="menu">
+      <h2 class="stitle">
+        <small>Thực đơn</small>
+        Các loại cà phê
+      </h2>
+      <div class="menu-grid">
+        <div class="menu-item" itemscope itemtype="https://schema.org/MenuItem">
+          <h3 itemprop="name">Cà phê đen</h3>
+          <div class="price">25.000đ</div>
+          <p itemprop="description">Phin robusta đậm đà, uống nóng hoặc đá</p>
+        </div>
+        <div class="menu-item" itemscope itemtype="https://schema.org/MenuItem">
+          <h3 itemprop="name">Cà phê sữa đá</h3>
+          <div class="price">35.000đ</div>
+          <p itemprop="description">Phin kết hợp sữa đặc Ông Thọ, thêm đá</p>
+        </div>
+        <div class="menu-item" itemscope itemtype="https://schema.org/MenuItem">
+          <h3 itemprop="name">Bạc xỉu</h3>
+          <div class="price">35.000đ</div>
+          <p itemprop="description">Ít cà phê nhiều sữa, đặc sản Nam Bộ</p>
+        </div>
+        <div class="menu-item" itemscope itemtype="https://schema.org/MenuItem">
+          <h3 itemprop="name">Cà phê trứng</h3>
+          <div class="price">45.000đ</div>
+          <p itemprop="description">Công thức Hà Nội – lòng đỏ trứng đánh bông</p>
+        </div>
+        <div class="menu-item" itemscope itemtype="https://schema.org/MenuItem">
+          <h3 itemprop="name">Cà phê dừa</h3>
+          <div class="price">55.000đ</div>
+          <p itemprop="description">Sinh tố dừa xay lạnh pha espresso</p>
+        </div>
+        <div class="menu-item" itemscope itemtype="https://schema.org/MenuItem">
+          <h3 itemprop="name">Cold brew</h3>
+          <div class="price">65.000đ</div>
+          <p itemprop="description">Ủ lạnh 18 tiếng, vị dịu ngọt tự nhiên</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOWTO – AEO: rich result dạng hướng dẫn từng bước, match HowTo schema -->
+    <section id="huong-dan">
+      <h2 class="stitle">
+        <small>Hướng dẫn · AEO – HowTo Schema</small>
+        Cách pha cà phê phin tại nhà
+      </h2>
+      <!-- AEO: answer-first – trả lời trực tiếp trong 40–60 từ đầu -->
+      <p style="color:#444;margin-top:14px">
+        <strong>Cà phê phin pha đúng cách</strong> chỉ cần 4 bước và 10 phút. Dùng 20–25g cà phê xay vừa, nước nóng 90–95°C và phin nhôm hoặc inox là đủ.
+      </p>
+      <div class="steps" itemscope itemtype="https://schema.org/HowTo">
+        <meta itemprop="name" content="Cách pha cà phê phin tại nhà" />
+        <div class="step" itemscope itemprop="step" itemtype="https://schema.org/HowToStep">
+          <div class="step-num">1</div>
+          <div>
+            <h3 itemprop="name">Chuẩn bị phin và cà phê</h3>
+            <p itemprop="text">Cho 20–25g cà phê xay vừa vào phin, lắc nhẹ để cà phê phẳng. Đặt phin lên ly thủy tinh chịu nhiệt.</p>
+          </div>
+        </div>
+        <div class="step" itemscope itemprop="step" itemtype="https://schema.org/HowToStep">
+          <div class="step-num">2</div>
+          <div>
+            <h3 itemprop="name">Làm ướt cà phê (bloom)</h3>
+            <p itemprop="text">Rót khoảng 30ml nước nóng 90–95°C, đậy nắp, chờ 30 giây để CO₂ thoát ra và cà phê nở đều.</p>
+          </div>
+        </div>
+        <div class="step" itemscope itemprop="step" itemtype="https://schema.org/HowToStep">
+          <div class="step-num">3</div>
+          <div>
+            <h3 itemprop="name">Rót nước pha chính</h3>
+            <p itemprop="text">Rót tiếp 150ml nước nóng, đậy nắp. Chờ 4–5 phút cho cà phê nhỏ giọt hết xuống ly.</p>
+          </div>
+        </div>
+        <div class="step" itemscope itemprop="step" itemtype="https://schema.org/HowToStep">
+          <div class="step-num">4</div>
+          <div>
+            <h3 itemprop="name">Thưởng thức</h3>
+            <p itemprop="text">Uống nóng nguyên chất, hoặc thêm sữa đặc và đá để có cà phê sữa đá kiểu Sài Gòn.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ – AEO: câu hỏi + câu trả lời trực tiếp, match FAQPage schema -->
+    <section id="faq">
+      <h2 class="stitle">
+        <small>Câu hỏi thường gặp · AEO – FAQPage Schema</small>
+        Hỏi đáp về Cà Phê Sài Gòn
+      </h2>
+      <div class="faq-list">
+        <div class="faq-card" itemscope itemtype="https://schema.org/Question">
+          <h3 itemprop="name">Cà Phê Sài Gòn mở cửa mấy giờ?</h3>
+          <div class="answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+            <!-- AEO: câu trả lời trực tiếp, đủ ý trong 1–2 câu, không vòng vo -->
+            <p itemprop="text"><strong>Mở cửa từ 7:00 sáng đến 22:00 tối, tất cả các ngày kể cả cuối tuần và ngày lễ.</strong> Giờ cao điểm 7h–9h sáng thường đông, nên đến sớm hoặc sau 9h30.</p>
+          </div>
+        </div>
+        <div class="faq-card" itemscope itemtype="https://schema.org/Question">
+          <h3 itemprop="name">Cà phê phin truyền thống là gì?</h3>
+          <div class="answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+            <p itemprop="text"><strong>Là phương pháp pha bằng phin nhôm/inox, nước nóng nhỏ giọt qua bột cà phê trong 4–5 phút.</strong> Đây là cách pha đặc trưng của Việt Nam, cho ra ly cà phê đậm đà hơn drip coffee thông thường.</p>
+          </div>
+        </div>
+        <div class="faq-card" itemscope itemtype="https://schema.org/Question">
+          <h3 itemprop="name">Cà Phê Sài Gòn ở đâu, có chỗ để xe không?</h3>
+          <div class="answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+            <p itemprop="text"><strong>123 Nguyễn Huệ, Quận 1, TP.HCM</strong> — cách phố đi bộ 200m. Có bãi giữ xe máy phía sau, phí 5.000đ/xe.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- E-E-A-T – AIEO: author rõ ràng = tín hiệu Experience + Trustworthiness -->
+    <section id="gioi-thieu">
+      <h2 class="stitle">
+        <small>Về chúng tôi · AIEO – E-E-A-T Signal</small>
+        Câu chuyện của quán
+      </h2>
+      <p style="color:#444;margin-top:14px;margin-bottom:16px">
+        Cà Phê Sài Gòn mở cửa từ năm 2015, chuyên phục vụ cà phê phin rang mộc từ hạt Robusta Buôn Ma Thuột và Arabica Cầu Đất. Không dùng hương liệu hay phẩm màu nhân tạo.
+      </p>
+      <!-- AIEO: tác giả cụ thể, ngày cập nhật, chuyên môn rõ ràng = AI tin tưởng hơn -->
+      <div class="author-box" itemscope itemtype="https://schema.org/Person">
+        <div class="author-avatar">T</div>
+        <div class="author-info">
+          <h3 itemprop="name">Nguyễn Minh Tuấn</h3>
+          <p itemprop="description">Chủ quán và người rang xay — 10 năm kinh nghiệm trong ngành cà phê Việt Nam. Học rang cà phê tại Buôn Ma Thuột và TP.HCM.</p>
+          <div class="meta">
+            ✏️ Nội dung do chủ quán trực tiếp cung cấp &nbsp;·&nbsp;
+            Chuyên về: <span itemprop="knowsAbout">cà phê Việt Nam, rang xay thủ công</span> &nbsp;·&nbsp;
+            🕒 Cập nhật: <time itemprop="dateModified" datetime="2025-05">tháng 5/2025</time>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<footer>
+  <p><strong>Cà Phê Sài Gòn</strong> – 123 Nguyễn Huệ, Quận 1, TP.HCM &nbsp;|&nbsp; 📞 028-1234-5678</p>
+  <p>🕐 7:00–22:00 mỗi ngày</p>
+  <p style="margin-top:10px;font-size:12px;opacity:.6">
+    Kỹ thuật đã áp dụng: FAQPage Schema · HowTo Schema · Organization Schema · Semantic HTML5 · E-E-A-T · Answer-first Content · Microdata (itemscope/itemprop)
+  </p>
+</footer>
+
+</body>
+</html>
